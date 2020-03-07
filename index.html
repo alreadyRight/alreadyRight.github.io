@@ -160,7 +160,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/aboutHexo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/08/aboutHexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/myLogoIcon.png">
@@ -174,7 +174,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/07/aboutHexo/" class="post-title-link" itemprop="url">hexo建站过程中踩的坑总结</a>
+            <a href="/2020/03/08/aboutHexo/" class="post-title-link" itemprop="url">hexo建站总结</a>
         </h1>
 
         <div class="post-meta">
@@ -184,7 +184,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-07 23:27:41" itemprop="dateCreated datePublished" datetime="2020-03-07T23:27:41+08:00">2020-03-07</time>
+              <time title="创建时间：2020-03-08 00:42:59" itemprop="dateCreated datePublished" datetime="2020-03-08T00:42:59+08:00">2020-03-08</time>
             </span>
 
           
@@ -199,64 +199,63 @@
 
       
           <h3 id="关于建站"><a href="#关于建站" class="headerlink" title="关于建站"></a>关于建站</h3><p>博客嘛,作为一个程序员总得要有一个,自己买服务器来建站,这是大神干的活,作为一个初级的菜鸡,想象不了需要花费多少时间精力,前几天从一个<a href="https://zhanglyn.github.io" target="_blank" rel="noopener">沙雕朋友</a>那边知道了hexo,创建自己的博客简单方便,但在过程中还是遇到了不少问题.在此记录一下,也跟用hexo建博客的小伙伴们一起交流学习.<br>建站教程的话这边就不讲了,hexo的官方文档讲的很清楚的,由此访问<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo文档</a></p>
-<p>关于编辑器</p>
-<p>网上有不少人推荐<a href="https://www.typora.io/#" target="_blank" rel="noopener">typora</a>,但我个人用的是webstorm,开发用的习惯了,也懒得装其他的(主要是电脑空间不太够),放一张图片,编辑markdown还是挺舒服的.</p>
-<p><img src="/.com//preview.png" alt="我的路径"></p>
-<p>主题更换</p>
-<p>选择主题</p>
-<p>刚开始搭的时候,选择一个适(zhuang)合(bi)的主题,那肯定是必须的,主题选择,在这个网站上先选择一个心仪的主题,我个人选择的是hexo-themes-matery,下面就已hexo-themes-matery主题来举例.</p>
-<p>下载主题</p>
-<p>如果选择跟我一样的,那么到这个网站下载hexo-themes-matery,然后再你的博客路径下面站到themes文件夹<br>我的路径<br>我的路径</p>
+<h3 id="关于编辑器"><a href="#关于编辑器" class="headerlink" title="关于编辑器"></a>关于编辑器</h3><p>网上有不少人推荐<a href="https://www.typora.io/#" target="_blank" rel="noopener">typora</a>,但我个人用的是webstorm,开发用的习惯了,也懒得装其他的(主要是电脑空间不太够),放一张图片,编辑markdown还是挺舒服的.</p>
+<p><img src="/2020/03/08/aboutHexo/preview.png" alt="编辑预览图"></p>
+<h3 id="主题更换"><a href="#主题更换" class="headerlink" title="主题更换"></a>主题更换</h3><h4 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h4><p>刚开始搭的时候,选择一个适(zhuang)合(bi)的主题,那肯定是必须的,主题选择,在这个网站上先选择一个心仪的主题,我个人选择的是hexo-themes-matery,下面就已hexo-themes-matery主题来举例.</p>
+<h4 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h4><p>如果选择跟我一样的,那么到这个网站下载hexo-themes-matery,然后再你的博客路径下面站到themes文件夹</p>
+<p><img src="/2020/03/08/aboutHexo/path.png" alt="我的路径"></p>
 <p>或者cd 到themes文件夹路径下,执行</p>
-<p>git clone <a href="https://github.com/blinkfox/hexo-theme-matery.git" target="_blank" rel="noopener">https://github.com/blinkfox/hexo-theme-matery.git</a><br>更换默认主题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/blinkfox/hexo-theme-matery.git</span><br></pre></td></tr></table></figure>
+<p>更换默认主题</p>
 <p>修改 Hexo 根目录下的 _config.yml 的 theme 的值：theme: hexo-theme-matery</p>
 <p>然后执行</p>
-<p>$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s<br>hexo clean : 清除缓存文件 (db.json) 和已生成的静态文件 (public)。<br>hexo g : 生成静态文件。<br>hexo s : 启动服务器。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+<p>hexo clean : 清除缓存文件 (db.json) 和已生成的静态文件 (public)。<br>hexo g : 生成静态文件。<br>hexo s : 启动服务器。</p>
 <p>之后访问localhost:4000就可以看到你的博客更换过后的主题</p>
-<p>代码高亮</p>
-<p>博客的文章要好(zhuang)看(bi),那代码高亮必不可少,黑乎乎的一坨看下去的欲望都没有.</p>
-<p>代码高亮在我这个主题中,作者有推荐一个插件,可能是我太笨了吧,一直不知道怎么用,有知道如何用的可以直接qq或邮箱联系我,随时接受打扰(晚上1点之后就另说了).额,说下这个插件的名字hexo-prism-plugin</p>
-<p>因为我是一个iOS开发的码农,这个插件OC语法一直不能高亮(可能是因为我不会用),所以就另寻蹊径,有一个很多人都在用的highlight.js</p>
-<p>访问该主页highlight.js</p>
+<h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>博客的文章要好(zhuang)看(bi),那代码高亮必不可少,黑乎乎的一坨看下去的欲望都没有.</p>
+<p>代码高亮在我这个主题中,作者有推荐一个插件,可能是我太笨了吧,一直不知道怎么用,有知道如何用的可以直接qq或邮箱联系我,随时接受打扰(晚上1点之后就另说了).额,说下这个插件的名字<a href="https://github.com/ele828/hexo-prism-plugin" target="_blank" rel="noopener">hexo-prism-plugin</a></p>
+<p>因为我是一个iOS开发的码农,这个插件OC语法一直不能高亮(可能是因为我不会用),所以就另寻蹊径,有一个很多人都在用的<a href="https://highlightjs.org" target="_blank" rel="noopener">highlight.js</a></p>
+<p>访问该主页<a href="https://highlightjs.org" target="_blank" rel="noopener">highlight.js</a></p>
 <p>用法也很简单,不像网上大部分人说的需要下载放到plugins目录下面,直接在主题的ejs文件中导入使用就行</p>
 <p>首先,在博客的配置文件中关闭默认的代码高亮</p>
-<p>highlight:<br>  enable: false<br>我使用的主题是在hexo-theme-matery/layout/_partial/header.js和footer.js中的<head></head>中引入引用</p>
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs2015.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js">
-</script>
-<script>
-    hljs.initHighlightingOnLoad();
-</script>
-可以看到,我这边使用的主题是vs2015(毕竟我是一个传统的人)
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
+<p>我使用的主题是在hexo-theme-matery/layout/_partial/header.js和footer.js中的<code>&lt;head&gt;&lt;/head&gt;</code>中引入引用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span></span><br><span class="line">          href=<span class="string">"//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs2015.min.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"</span>&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    hljs.initHighlightingOnLoad();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到,我这边使用的主题是vs2015</p>
 <p>对了,另外跟萌新说下,在哪边选这些主题</p>
-<p>点击这里浏览各种主题的效果</p>
+<p><a href="https://highlightjs.org/static/demo/" target="_blank" rel="noopener">点击这里浏览各种主题的效果</a></p>
 <p>再多嘴一句,选完之后最好在浏览器中访问一下css是否存在</p>
-<p>像这个cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs2015.min.css</p>
-<p>图片上传</p>
-<p>在网上查了有两种方式,哪种好用,则自己选择,个人是主推第二种方式</p>
+<p>像这个<a href="https://alreadyright.github.io/2019/06/16/aboutHexo/cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs2015.min.css" target="_blank" rel="noopener">cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs2015.min.css</a></p>
+<h3 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h3><p>在网上查了有两种方式,哪种好用,则自己选择,个人是主推第二种方式</p>
 <p>第一种方式,在第三方网站上上传图片,譬如七牛,然后在你博客中已下面格式即可插入图片,</p>
-<p><img src="https://%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5" alt="图片简介"><br>优点:不占git空间.<br>缺点:图片管理的想自杀<br>第二种方式,在本地插入,hexo官网也有相关说明,hexo图片上传说明</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片简介](https://图片链接)</span><br></pre></td></tr></table></figure>
+<p>优点:不占git空间.<br>缺点:图片管理的想自杀</p>
+<p>第二种方式,在本地插入,hexo官网也有相关说明,<a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">hexo图片上传说明</a></p>
 <p>设置站点配置_config.yml:将post_asset_folder: false改为post_asset_folder: true</p>
 <p>执行hexo new [xxxx],生成xxxx.md和xxxx文件夹</p>
 <p>把要引用的图片拷贝到xxxx文件夹中</p>
 来引用本地图片
-<p>如果想使用markdown语法来保持文章编辑整洁,那么可以使用hexo-asset-image插件来实现</p>
+<p>如果想使用markdown语法来保持文章编辑整洁,那么可以使用<a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="noopener">hexo-asset-image</a>插件来实现</p>
 <p>那么配置的顺序则为:</p>
 <p>设置站点配置_config.yml:将post_asset_folder: false改为post_asset_folder: true</p>
-<p>执行 npm install hexo-asset-image –save 装插件</p>
+<p>执行 <code>npm install hexo-asset-image –save</code> 装插件</p>
 <p>执行hexo new [xxxx],生成xxxx.md和xxxx文件夹</p>
 <p>把要引用的图片拷贝到xxxx文件夹中</p>
-<p>使用<img src="/.com//example.jpg" alt>来引用本地图片</p>
-<p>然后么,你可能会遇到一个问题,发现图片没有上传,嘿嘿嘿,那走的坑就跟我的一样了.</p>
-<p>后面就跟你们说下这个问题的解决方案是怎么发现的</p>
-<p>插件的issue<br>插件的issue</p>
+<p>使用<code>![](xxxx/example.jpg)</code>来引用本地图片</p>
+<p>注意:此时图片还是不能展示,插件1.0.0版本有问题,正常显示把插件版本切换到0.0.1,虽然不清楚作者为什么新的代码反而有错.</p>
+<p><img src="/2020/03/08/aboutHexo/issueImg.png" alt="插件的issue"></p>
 <p>哎,1.0.0版本有问题,那就切到0.0.1版本试试</p>
-<p>打开博客根目录下的package.json文件<br>package.json<br>package.json</p>
+<p>打开博客根目录下的package.json文件<br><img src="/2020/03/08/aboutHexo/packageImage.png" alt="package.json"></p>
 <p>把hexo-asset-image的版本号改成0.0.1,然后windows打开cmd,cd到博客根目录下执行npm install或者yarn install(你装过yarn的话),mac也是同样的操作.</p>
 <p>装完之后,看下图片上传的效果,执行下面语句</p>
-<p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s<br>刷新localhost:4000来看看图片在本地是否已经上传了</p>
-<p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br>打开你的github博客地址,看看远程是否已经上传了本地图片</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<p>刷新localhost:4000来看看图片在本地是否已经上传了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<p>打开你的github博客地址,看看远程是否已经上传了本地图片</p>
 <p>优点:图片管理清楚舒服<br>缺点:git空间随着图片越来越满<br>如果对于上面图片上传的配置的总结有什么问题请联系我,在总结之外的我应该也不太清楚了,祝你好运.</p>
 
       
