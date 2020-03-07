@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="关于建站博客嘛,作为一个程序员总得要有一个,自己买服务器来建站,这是大神干的活,作为一个初级的菜鸡,想象不了需要花费多少时间精力,前几天从一个沙雕朋友那边知道了hexo,创建自己的博客简单方便,但在过程中还是遇到了不少问题.在此记录一下,也跟用hexo建博客的小伙伴们一起交流学习.建站教程的话这边就不讲了,hexo的官方文档讲的很清楚的,由此访问hexo文档 关于编辑器 网上有不少人推荐typor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo建站过程中踩的坑总结">
+<meta property="og:url" content="http://yoursite.com/2020/03/07/aboutHexo/index.html">
+<meta property="og:site_name" content="Mr.9&#39;s Blog">
+<meta property="og:description" content="关于建站博客嘛,作为一个程序员总得要有一个,自己买服务器来建站,这是大神干的活,作为一个初级的菜鸡,想象不了需要花费多少时间精力,前几天从一个沙雕朋友那边知道了hexo,创建自己的博客简单方便,但在过程中还是遇到了不少问题.在此记录一下,也跟用hexo建博客的小伙伴们一起交流学习.建站教程的话这边就不讲了,hexo的官方文档讲的很清楚的,由此访问hexo文档 关于编辑器 网上有不少人推荐typor">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/.com//preview.png">
+<meta property="og:image" content="https://图片链接/">
+<meta property="og:image" content="http://yoursite.com/.com//example.jpg">
+<meta property="article:published_time" content="2020-03-07T15:27:41.772Z">
+<meta property="article:modified_time" content="2020-03-07T15:27:41.772Z">
+<meta property="article:author" content="周冰烽">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/.com//preview.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/03/07/aboutHexo/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>hexo建站过程中踩的坑总结 | Mr.9's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bce6a146577022b6cb6f125c93543cce";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mr.9's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/aboutHexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/myLogoIcon.png">
+      <meta itemprop="name" content="周冰烽">
+      <meta itemprop="description" content="未来的自己将对我们现在的付出感激不尽">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.9's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hexo建站过程中踩的坑总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-07 23:27:41" itemprop="dateCreated datePublished" datetime="2020-03-07T23:27:41+08:00">2020-03-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="关于建站"><a href="#关于建站" class="headerlink" title="关于建站"></a>关于建站</h3><p>博客嘛,作为一个程序员总得要有一个,自己买服务器来建站,这是大神干的活,作为一个初级的菜鸡,想象不了需要花费多少时间精力,前几天从一个<a href="https://zhanglyn.github.io" target="_blank" rel="noopener">沙雕朋友</a>那边知道了hexo,创建自己的博客简单方便,但在过程中还是遇到了不少问题.在此记录一下,也跟用hexo建博客的小伙伴们一起交流学习.<br>建站教程的话这边就不讲了,hexo的官方文档讲的很清楚的,由此访问<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo文档</a></p>
+<p>关于编辑器</p>
+<p>网上有不少人推荐<a href="https://www.typora.io/#" target="_blank" rel="noopener">typora</a>,但我个人用的是webstorm,开发用的习惯了,也懒得装其他的(主要是电脑空间不太够),放一张图片,编辑markdown还是挺舒服的.</p>
+<p><img src="/.com//preview.png" alt="我的路径"></p>
+<p>主题更换</p>
+<p>选择主题</p>
+<p>刚开始搭的时候,选择一个适(zhuang)合(bi)的主题,那肯定是必须的,主题选择,在这个网站上先选择一个心仪的主题,我个人选择的是hexo-themes-matery,下面就已hexo-themes-matery主题来举例.</p>
+<p>下载主题</p>
+<p>如果选择跟我一样的,那么到这个网站下载hexo-themes-matery,然后再你的博客路径下面站到themes文件夹<br>我的路径<br>我的路径</p>
+<p>或者cd 到themes文件夹路径下,执行</p>
+<p>git clone <a href="https://github.com/blinkfox/hexo-theme-matery.git" target="_blank" rel="noopener">https://github.com/blinkfox/hexo-theme-matery.git</a><br>更换默认主题</p>
+<p>修改 Hexo 根目录下的 _config.yml 的 theme 的值：theme: hexo-theme-matery</p>
+<p>然后执行</p>
+<p>$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s<br>hexo clean : 清除缓存文件 (db.json) 和已生成的静态文件 (public)。<br>hexo g : 生成静态文件。<br>hexo s : 启动服务器。</p>
+<p>之后访问localhost:4000就可以看到你的博客更换过后的主题</p>
+<p>代码高亮</p>
+<p>博客的文章要好(zhuang)看(bi),那代码高亮必不可少,黑乎乎的一坨看下去的欲望都没有.</p>
+<p>代码高亮在我这个主题中,作者有推荐一个插件,可能是我太笨了吧,一直不知道怎么用,有知道如何用的可以直接qq或邮箱联系我,随时接受打扰(晚上1点之后就另说了).额,说下这个插件的名字hexo-prism-plugin</p>
+<p>因为我是一个iOS开发的码农,这个插件OC语法一直不能高亮(可能是因为我不会用),所以就另寻蹊径,有一个很多人都在用的highlight.js</p>
+<p>访问该主页highlight.js</p>
+<p>用法也很简单,不像网上大部分人说的需要下载放到plugins目录下面,直接在主题的ejs文件中导入使用就行</p>
+<p>首先,在博客的配置文件中关闭默认的代码高亮</p>
+<p>highlight:<br>  enable: false<br>我使用的主题是在hexo-theme-matery/layout/_partial/header.js和footer.js中的<head></head>中引入引用</p>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs2015.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js">
+</script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+可以看到,我这边使用的主题是vs2015(毕竟我是一个传统的人)
+
+<p>对了,另外跟萌新说下,在哪边选这些主题</p>
+<p>点击这里浏览各种主题的效果</p>
+<p>再多嘴一句,选完之后最好在浏览器中访问一下css是否存在</p>
+<p>像这个cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs2015.min.css</p>
+<p>图片上传</p>
+<p>在网上查了有两种方式,哪种好用,则自己选择,个人是主推第二种方式</p>
+<p>第一种方式,在第三方网站上上传图片,譬如七牛,然后在你博客中已下面格式即可插入图片,</p>
+<p><img src="https://%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5" alt="图片简介"><br>优点:不占git空间.<br>缺点:图片管理的想自杀<br>第二种方式,在本地插入,hexo官网也有相关说明,hexo图片上传说明</p>
+<p>设置站点配置_config.yml:将post_asset_folder: false改为post_asset_folder: true</p>
+<p>执行hexo new [xxxx],生成xxxx.md和xxxx文件夹</p>
+<p>把要引用的图片拷贝到xxxx文件夹中</p>
+来引用本地图片
+<p>如果想使用markdown语法来保持文章编辑整洁,那么可以使用hexo-asset-image插件来实现</p>
+<p>那么配置的顺序则为:</p>
+<p>设置站点配置_config.yml:将post_asset_folder: false改为post_asset_folder: true</p>
+<p>执行 npm install hexo-asset-image –save 装插件</p>
+<p>执行hexo new [xxxx],生成xxxx.md和xxxx文件夹</p>
+<p>把要引用的图片拷贝到xxxx文件夹中</p>
+<p>使用<img src="/.com//example.jpg" alt>来引用本地图片</p>
+<p>然后么,你可能会遇到一个问题,发现图片没有上传,嘿嘿嘿,那走的坑就跟我的一样了.</p>
+<p>后面就跟你们说下这个问题的解决方案是怎么发现的</p>
+<p>插件的issue<br>插件的issue</p>
+<p>哎,1.0.0版本有问题,那就切到0.0.1版本试试</p>
+<p>打开博客根目录下的package.json文件<br>package.json<br>package.json</p>
+<p>把hexo-asset-image的版本号改成0.0.1,然后windows打开cmd,cd到博客根目录下执行npm install或者yarn install(你装过yarn的话),mac也是同样的操作.</p>
+<p>装完之后,看下图片上传的效果,执行下面语句</p>
+<p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s<br>刷新localhost:4000来看看图片在本地是否已经上传了</p>
+<p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br>打开你的github博客地址,看看远程是否已经上传了本地图片</p>
+<p>优点:图片管理清楚舒服<br>缺点:git空间随着图片越来越满<br>如果对于上面图片上传的配置的总结有什么问题请联系我,在总结之外的我应该也不太清楚了,祝你好运.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/07/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于建站"><span class="nav-number">1.</span> <span class="nav-text">关于建站</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="周冰烽"
+      src="/images/myLogoIcon.png">
+  <p class="site-author-name" itemprop="name">周冰烽</p>
+  <div class="site-description" itemprop="description">未来的自己将对我们现在的付出感激不尽</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">周冰烽</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.2
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
