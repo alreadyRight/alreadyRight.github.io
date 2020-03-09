@@ -20,29 +20,42 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="未来的自己将对我们现在的付出感激不尽">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mr.9&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="CocoaPodsCocoaPods是一个非常好用的第三个依赖库的管理工具,基本每一个iOS Coder都会使用它的吧.除了管理依赖库,它还有更加强大的一个功能,那就是创建podspec,链接私有库或者发布公有库. 创建私有Spec Repo这个就在码云的平台上示例吧 1.在码云平台上创建私有库,用来存放.podspec描述文件 2.将远程私有库链接到本地复制你码云上的私有库https地址,执行下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CocoaPods从私有库到公有库一站式教程">
+<meta property="og:url" content="http://yoursite.com/2020/03/09/PersonalCocoaPods/index.html">
 <meta property="og:site_name" content="Mr.9&#39;s Blog">
-<meta property="og:description" content="未来的自己将对我们现在的付出感激不尽">
+<meta property="og:description" content="CocoaPodsCocoaPods是一个非常好用的第三个依赖库的管理工具,基本每一个iOS Coder都会使用它的吧.除了管理依赖库,它还有更加强大的一个功能,那就是创建podspec,链接私有库或者发布公有库. 创建私有Spec Repo这个就在码云的平台上示例吧 1.在码云平台上创建私有库,用来存放.podspec描述文件 2.将远程私有库链接到本地复制你码云上的私有库https地址,执行下">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/03/09/PersonalCocoaPods/0.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/03/09/PersonalCocoaPods/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/03/09/PersonalCocoaPods/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/03/09/PersonalCocoaPods/4.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/03/09/PersonalCocoaPods/5.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/03/09/PersonalCocoaPods/6.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/03/09/PersonalCocoaPods/7.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/03/09/PersonalCocoaPods/8.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/03/09/PersonalCocoaPods/9.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/03/09/PersonalCocoaPods/10.jpg">
+<meta property="article:published_time" content="2020-03-09T01:16:53.881Z">
+<meta property="article:modified_time" content="2020-03-09T01:16:53.881Z">
 <meta property="article:author" content="周冰烽">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/03/09/PersonalCocoaPods/0.jpg">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/03/09/PersonalCocoaPods/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false
+    isHome : false,
+    isPost : true
   };
 </script>
 
-  <title>Mr.9's Blog</title>
+  <title>CocoaPods从私有库到公有库一站式教程 | Mr.9's Blog</title>
   
 
 
@@ -156,10 +169,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/09/PersonalCocoaPods/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -173,8 +186,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/09/PersonalCocoaPods/" class="post-title-link" itemprop="url">CocoaPods从私有库到公有库一站式教程</a>
+          CocoaPods从私有库到公有库一站式教程
         </h1>
 
         <div class="post-meta">
@@ -198,7 +210,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a>CocoaPods</h3><p>CocoaPods是一个非常好用的第三个依赖库的管理工具,基本每一个iOS Coder都会使用它的吧.除了管理依赖库,它还有更加强大的一个功能,那就是创建podspec,链接私有库或者发布公有库.</p>
+        <h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a>CocoaPods</h3><p>CocoaPods是一个非常好用的第三个依赖库的管理工具,基本每一个iOS Coder都会使用它的吧.除了管理依赖库,它还有更加强大的一个功能,那就是创建podspec,链接私有库或者发布公有库.</p>
 <h3 id="创建私有Spec-Repo"><a href="#创建私有Spec-Repo" class="headerlink" title="创建私有Spec Repo"></a>创建私有Spec Repo</h3><p>这个就在码云的平台上示例吧</p>
 <h4 id="1-在码云平台上创建私有库-用来存放-podspec描述文件"><a href="#1-在码云平台上创建私有库-用来存放-podspec描述文件" class="headerlink" title="1.在码云平台上创建私有库,用来存放.podspec描述文件"></a>1.在码云平台上创建私有库,用来存放.podspec描述文件</h4><p><img src="/2020/03/09/PersonalCocoaPods/0.jpg" alt="创建私有库"></p>
 <h4 id="2-将远程私有库链接到本地"><a href="#2-将远程私有库链接到本地" class="headerlink" title="2.将远程私有库链接到本地"></a>2.将远程私有库链接到本地</h4><p>复制你码云上的私有库https地址,执行下面语句来链接远程私有库</p>
@@ -268,210 +280,33 @@
 <p>搜索你的库: <code>pod search xxxxx</code>,如果找不到,先执行下面一步</p>
 <p>在测试工程podfile中,pod xxxx导入库,再把私有库源从podfile中删掉,再执行 <code>pod install</code>,如果能成功导入,则说明上传成功了.</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/08/aboutHexo/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/myLogoIcon.png">
-      <meta itemprop="name" content="周冰烽">
-      <meta itemprop="description" content="未来的自己将对我们现在的付出感激不尽">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.9's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/08/aboutHexo/" class="post-title-link" itemprop="url">hexo建站总结</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-08 00:42:59" itemprop="dateCreated datePublished" datetime="2020-03-08T00:42:59+08:00">2020-03-08</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="关于建站"><a href="#关于建站" class="headerlink" title="关于建站"></a>关于建站</h3><p>博客嘛,作为一个程序员总得要有一个,自己买服务器来建站,这是大神干的活,作为一个初级的菜鸡,想象不了需要花费多少时间精力,前几天从一个<a href="https://zhanglyn.github.io" target="_blank" rel="noopener">沙雕朋友</a>那边知道了hexo,创建自己的博客简单方便,但在过程中还是遇到了不少问题.在此记录一下,也跟用hexo建博客的小伙伴们一起交流学习.<br>建站教程的话这边就不讲了,hexo的官方文档讲的很清楚的,由此访问<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo文档</a></p>
-<h3 id="关于编辑器"><a href="#关于编辑器" class="headerlink" title="关于编辑器"></a>关于编辑器</h3><p>网上有不少人推荐<a href="https://www.typora.io/#" target="_blank" rel="noopener">typora</a>,但我个人用的是webstorm,开发用的习惯了,也懒得装其他的(主要是电脑空间不太够),放一张图片,编辑markdown还是挺舒服的.</p>
-<p><img src="/2020/03/08/aboutHexo/preview.png" alt="编辑预览图"></p>
-<h3 id="主题更换"><a href="#主题更换" class="headerlink" title="主题更换"></a>主题更换</h3><h4 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h4><p>刚开始搭的时候,选择一个适(zhuang)合(bi)的主题,那肯定是必须的,主题选择,在这个网站上先选择一个心仪的主题,我个人选择的是hexo-themes-matery,下面就已hexo-themes-matery主题来举例.</p>
-<h4 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h4><p>如果选择跟我一样的,那么到这个网站下载hexo-themes-matery,然后再你的博客路径下面站到themes文件夹</p>
-<p><img src="/2020/03/08/aboutHexo/path.png" alt="我的路径"></p>
-<p>或者cd 到themes文件夹路径下,执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/blinkfox/hexo-theme-matery.git</span><br></pre></td></tr></table></figure>
-<p>更换默认主题</p>
-<p>修改 Hexo 根目录下的 _config.yml 的 theme 的值：theme: hexo-theme-matery</p>
-<p>然后执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-<p>hexo clean : 清除缓存文件 (db.json) 和已生成的静态文件 (public)。<br>hexo g : 生成静态文件。<br>hexo s : 启动服务器。</p>
-<p>之后访问localhost:4000就可以看到你的博客更换过后的主题</p>
-<h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>博客的文章要好(zhuang)看(bi),那代码高亮必不可少,黑乎乎的一坨看下去的欲望都没有.</p>
-<p>代码高亮在我这个主题中,作者有推荐一个插件,可能是我太笨了吧,一直不知道怎么用,有知道如何用的可以直接qq或邮箱联系我,随时接受打扰(晚上1点之后就另说了).额,说下这个插件的名字<a href="https://github.com/ele828/hexo-prism-plugin" target="_blank" rel="noopener">hexo-prism-plugin</a></p>
-<p>因为我是一个iOS开发的码农,这个插件OC语法一直不能高亮(可能是因为我不会用),所以就另寻蹊径,有一个很多人都在用的<a href="https://highlightjs.org" target="_blank" rel="noopener">highlight.js</a></p>
-<p>访问该主页<a href="https://highlightjs.org" target="_blank" rel="noopener">highlight.js</a></p>
-<p>用法也很简单,不像网上大部分人说的需要下载放到plugins目录下面,直接在主题的ejs文件中导入使用就行</p>
-<p>首先,在博客的配置文件中关闭默认的代码高亮</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<p>我使用的主题是在hexo-theme-matery/layout/_partial/header.js和footer.js中的<code>&lt;head&gt;&lt;/head&gt;</code>中引入引用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span></span><br><span class="line">          href=<span class="string">"//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs2015.min.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"</span>&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    hljs.initHighlightingOnLoad();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>可以看到,我这边使用的主题是vs2015</p>
-<p>对了,另外跟萌新说下,在哪边选这些主题</p>
-<p><a href="https://highlightjs.org/static/demo/" target="_blank" rel="noopener">点击这里浏览各种主题的效果</a></p>
-<p>再多嘴一句,选完之后最好在浏览器中访问一下css是否存在</p>
-<p>像这个<a href="https://alreadyright.github.io/2019/06/16/aboutHexo/cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs2015.min.css" target="_blank" rel="noopener">cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs2015.min.css</a></p>
-<h3 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h3><p>在网上查了有两种方式,哪种好用,则自己选择,个人是主推第二种方式</p>
-<p>第一种方式,在第三方网站上上传图片,譬如七牛,然后在你博客中已下面格式即可插入图片,</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片简介](https://图片链接)</span><br></pre></td></tr></table></figure>
-<p>优点:不占git空间.<br>缺点:图片管理的想自杀</p>
-<p>第二种方式,在本地插入,hexo官网也有相关说明,<a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">hexo图片上传说明</a></p>
-<p>设置站点配置_config.yml:将post_asset_folder: false改为post_asset_folder: true</p>
-<p>执行hexo new [xxxx],生成xxxx.md和xxxx文件夹</p>
-<p>把要引用的图片拷贝到xxxx文件夹中</p>
-来引用本地图片
-<p>如果想使用markdown语法来保持文章编辑整洁,那么可以使用<a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="noopener">hexo-asset-image</a>插件来实现</p>
-<p>那么配置的顺序则为:</p>
-<p>设置站点配置_config.yml:将post_asset_folder: false改为post_asset_folder: true</p>
-<p>执行 <code>npm install hexo-asset-image –save</code> 装插件</p>
-<p>执行hexo new [xxxx],生成xxxx.md和xxxx文件夹</p>
-<p>把要引用的图片拷贝到xxxx文件夹中</p>
-<p>使用<code>![](xxxx/example.jpg)</code>来引用本地图片</p>
-<p>注意:此时图片还是不能展示,插件1.0.0版本有问题,正常显示把插件版本切换到0.0.1,虽然不清楚作者为什么新的代码反而有错.</p>
-<p><img src="/2020/03/08/aboutHexo/issueImg.png" alt="插件的issue"></p>
-<p>哎,1.0.0版本有问题,那就切到0.0.1版本试试</p>
-<p>打开博客根目录下的package.json文件<br><img src="/2020/03/08/aboutHexo/packageImage.png" alt="package.json"></p>
-<p>把hexo-asset-image的版本号改成0.0.1,然后windows打开cmd,cd到博客根目录下执行npm install或者yarn install(你装过yarn的话),mac也是同样的操作.</p>
-<p>装完之后,看下图片上传的效果,执行下面语句</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-
-<p>刷新localhost:4000来看看图片在本地是否已经上传了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<p>打开你的github博客地址,看看远程是否已经上传了本地图片</p>
-<p>优点:图片管理清楚舒服<br>缺点:git空间随着图片越来越满<br>如果对于上面图片上传的配置的总结有什么问题请联系我,在总结之外的我应该也不太清楚了,祝你好运.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/07/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/myLogoIcon.png">
-      <meta itemprop="name" content="周冰烽">
-      <meta itemprop="description" content="未来的自己将对我们现在的付出感激不尽">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.9's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/07/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-07 19:45:49" itemprop="dateCreated datePublished" datetime="2020-03-07T19:45:49+08:00">2020-03-07</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/08/aboutHexo/" rel="prev" title="hexo建站总结">
+      <i class="fa fa-chevron-left"></i> hexo建站总结
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -522,6 +357,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CocoaPods"><span class="nav-number">1.</span> <span class="nav-text">CocoaPods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建私有Spec-Repo"><span class="nav-number">2.</span> <span class="nav-text">创建私有Spec Repo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-在码云平台上创建私有库-用来存放-podspec描述文件"><span class="nav-number">2.1.</span> <span class="nav-text">1.在码云平台上创建私有库,用来存放.podspec描述文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-将远程私有库链接到本地"><span class="nav-number">2.2.</span> <span class="nav-text">2.将远程私有库链接到本地</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建私有库"><span class="nav-number">3.</span> <span class="nav-text">创建私有库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建Lib-Code"><span class="nav-number">3.1.</span> <span class="nav-text">1.创建Lib Code</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-替换文件"><span class="nav-number">3.2.</span> <span class="nav-text">2.替换文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-github代码托管以及编辑podspec"><span class="nav-number">3.3.</span> <span class="nav-text">3.github代码托管以及编辑podspec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-podspec验证上传"><span class="nav-number">3.4.</span> <span class="nav-text">4.podspec验证上传</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-验证私有库导入"><span class="nav-number">3.5.</span> <span class="nav-text">5.验证私有库导入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传公有库到cocoapods"><span class="nav-number">4.</span> <span class="nav-text">上传公有库到cocoapods</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
