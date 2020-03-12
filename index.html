@@ -160,7 +160,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/09/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/12/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/myLogoIcon.png">
@@ -174,7 +174,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/09/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">iOS项目错误总结</a>
+            <a href="/2020/03/12/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">iOS项目错误总结</a>
         </h1>
 
         <div class="post-meta">
@@ -184,7 +184,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-09 10:29:12" itemprop="dateCreated datePublished" datetime="2020-03-09T10:29:12+08:00">2020-03-09</time>
+              <time title="创建时间：2020-03-12 16:06:13" itemprop="dateCreated datePublished" datetime="2020-03-12T16:06:13+08:00">2020-03-12</time>
             </span>
 
           
@@ -196,8 +196,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/03/09/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/09/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/03/12/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/12/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -212,22 +212,101 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="解决-iOS-View-Controller-Push-Pop-时的黑影"><a href="#解决-iOS-View-Controller-Push-Pop-时的黑影" class="headerlink" title="解决 iOS View Controller Push/Pop 时的黑影"></a>解决 iOS View Controller Push/Pop 时的黑影</h3><p>之前做项目时,发现导航push到下个界面的时候,右上角会出现黑影,push完后就消失了,如下图<br><img src="/2020/03/09/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/0.png" alt><br>上网查询而知，iOS 自 7.x 某个版本以后就有这个问题。</p>
-<p>实际上很简单，如果这个ViewController 是在 TabBarViewController 的 NavigationController 上 Push/Pop的，那么只需要把 TabBarViewController 的 View 设置一下白色背景就可以了。</p>
+          <h3 id="解决-iOS-View-Controller-Push-Pop-时的黑影"><a href="#解决-iOS-View-Controller-Push-Pop-时的黑影" class="headerlink" title="解决 iOS View Controller Push/Pop 时的黑影"></a>解决 iOS View Controller Push/Pop 时的黑影</h3><h4 id="问题展示"><a href="#问题展示" class="headerlink" title="问题展示"></a>问题展示</h4><p>之前做项目时,发现导航push到下个界面的时候,右上角会出现黑影,push完后就消失了,如下图<br><img src="/2020/03/12/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/0.png" alt></p>
+<h4 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h4><p>iOS 自 7.x 某个版本以后就有这个问题,push到下个界面的时候右上角黑影为下个界面的颜色</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>如果这个ViewController 是在 TabBarViewController 的 NavigationController 上 Push/Pop的，那么只需要把 TabBarViewController 的 View 设置一下白色背景就可以了。</p>
 <p>建立一个 UINavigationController 的父类，在父类写上self.view.backgroundColor = [UIColor whiteColor];让你的NavigationController都继承，这样就OK了。</p>
 <p>但是到这里为止，只解决了 50%，还有另外一种情况没有解决，那就是如果你 present了一个NavigationController + ViewController后，在这个下面再进行Pop/Push 也是会有黑影的情况下。这种情况如何解决呢？</p>
 <p>类似的，设置一下 self.navigationController.view.backgroundColor = [UIColor whiteColor]; 即可。</p>
-<h3 id="Xcode11-beta版错误总结"><a href="#Xcode11-beta版错误总结" class="headerlink" title="Xcode11.beta版错误总结"></a>Xcode11.beta版错误总结</h3><h4 id="LLDB-PRC"><a href="#LLDB-PRC" class="headerlink" title="LLDB PRC"></a>LLDB PRC</h4><p><img src="/2020/03/09/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/1.png" alt="错误截图"></p>
+<h3 id="Xcode11版错误总结"><a href="#Xcode11版错误总结" class="headerlink" title="Xcode11版错误总结"></a>Xcode11版错误总结</h3><h4 id="LLDB-PRC"><a href="#LLDB-PRC" class="headerlink" title="LLDB PRC"></a>LLDB PRC</h4><h5 id="错误展示"><a href="#错误展示" class="headerlink" title="错误展示"></a>错误展示</h5><p><img src="/2020/03/12/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/1.png" alt="错误截图"></p>
 <p>具体原因未知,在去掉爱加密的服务之后在日志打印台上打印了具体报错信息,如下:</p>
-<p><img src="/2020/03/09/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/2.png" alt="日志"></p>
+<p><img src="/2020/03/12/iOS%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/2.png" alt="日志"></p>
 <p>遇到React Native启动报错的问题 getCurrentAppState:error 和 objectAtIndexedSubscript: 的解决方案</p>
-<p>在RCTModuleMethod.mm文件中</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="built_in">BOOL</span> RCTParseUnused(<span class="keyword">const</span> <span class="keyword">char</span> **input)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> RCTReadString(input, <span class="string">"__unused"</span>) ||</span><br><span class="line">         RCTReadString(input, <span class="string">"__attribute__((unused))"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="错误原因-1"><a href="#错误原因-1" class="headerlink" title="错误原因"></a>错误原因</h5><ul>
+<li>爱加密之后xcode11调试不会报具体错误信息</li>
+<li>React-Native内部代码在xcode11中会报错</li>
+</ul>
+<h5 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h5><p>在RCTModuleMethod.mm文件中</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="built_in">BOOL</span> RCTParseUnused(<span class="keyword">const</span> <span class="keyword">char</span> **input)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> RCTReadString(input, <span class="string">"__unused"</span>) ||</span><br><span class="line">         RCTReadString(input, <span class="string">"__attribute__((unused))"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>替换成</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="built_in">BOOL</span> RCTParseUnused(<span class="keyword">const</span> <span class="keyword">char</span> **input)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> RCTReadString(input, <span class="string">"__attribute__((unused))"</span>) ||</span><br><span class="line">         RCTReadString(input, <span class="string">"__attribute__((__unused__))"</span>) ||</span><br><span class="line">         RCTReadString(input, <span class="string">"__unused"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="built_in">BOOL</span> RCTParseUnused(<span class="keyword">const</span> <span class="keyword">char</span> **input)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> RCTReadString(input, <span class="string">"__attribute__((unused))"</span>) ||</span><br><span class="line">         RCTReadString(input, <span class="string">"__attribute__((__unused__))"</span>) ||</span><br><span class="line">         RCTReadString(input, <span class="string">"__unused"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>即可解决</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/12/React-Native%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/myLogoIcon.png">
+      <meta itemprop="name" content="周冰烽">
+      <meta itemprop="description" content="未来的自己将对我们现在的付出感激不尽">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.9's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/12/React-Native%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">React-Native项目错误总结</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-12 15:59:39" itemprop="dateCreated datePublished" datetime="2020-03-12T15:59:39+08:00">2020-03-12</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/12/React-Native%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/12/React-Native%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="react-native-side-menu展示问题"><a href="#react-native-side-menu展示问题" class="headerlink" title="react-native-side-menu展示问题"></a>react-native-side-menu展示问题</h3><h4 id="问题展示"><a href="#问题展示" class="headerlink" title="问题展示"></a>问题展示</h4><p><img src="/2020/03/12/React-Native%E9%A1%B9%E7%9B%AE%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/0.jpg" alt></p>
+<h4 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因:"></a>错误原因:</h4><p>预警信息(父视图)中没有设置背景颜色,默认背景颜色无法遮挡侧边栏的颜色</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>预警信息(父视图)设置背景颜色</p>
 
       
     </div>
@@ -681,7 +760,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
